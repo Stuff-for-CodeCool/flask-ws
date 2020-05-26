@@ -49,6 +49,23 @@ def step4():
     return render_template('step4.html')
 
 
+@app.route('/step5')
+def functie_cu_get():
+    if request.method == 'GET' and request.args.get('test') == 'hide':
+        name = request.args.get('name')
+        password = request.args.get('password')
+        option = request.args.get('option')
+
+        data = {
+            'name': name,
+            'password': password,
+            'option': option
+        }
+        return render_template('step4a.html', data=data)
+
+    return render_template('step5.html')
+
+
 if __name__ == "__main__":
     app.run(
         host="localhost",

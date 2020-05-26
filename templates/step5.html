@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Step 4</title>
+    <title>Step 5</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
@@ -12,8 +12,8 @@
 <body>
 
     <h1>Hello!</h1>
-    <p>Here's a form:</p>
-    <form action="/step4" method="POST">
+    <p>Here's another form:</p>
+    <form action="{{ url_for('functie_cu_get') }}">
         <p><label for="name">Name</label></p>
         <p><input type="text" name="name"></p>
 
@@ -26,6 +26,8 @@
         <p><input type="radio" name="option" value="3"> <label for="option">Option 3</label></p>
         <p><input type="radio" name="option" value="4"> <label for="option">Option 4</label></p>
         <p><input type="radio" name="option" value="5"> <label for="option">Option 5</label></p>
+
+        <input type="hidden" name="test" value="hide">
 
         <p><button type="submit">OK</button></p>
     </form>
