@@ -1,0 +1,14 @@
+body {
+    margin: 1em;
+    font: 14px/1.5 sans-serif;
+}
+
+h1 {
+    margin: .2em 0;
+    color: #2196F3;
+}
+
+ul {
+    list-style: none;
+    padding: 0 0 0 .5em;
+}
