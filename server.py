@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 
 app = Flask(__name__)
@@ -30,6 +30,23 @@ def step3():
         {'name': 'Banjo', 'definition': 'Bushwick live-edge distillery, quinoa gochujang skateboard squid la croix tbh wolf man braid tattooed YOLO four dollar toast.'}
     ]
     return render_template('step3.html', listing=listing)
+
+
+@app.route('/step4', methods=['GET', 'POST'])
+def step4():
+    if request.method == 'POST':
+        name = request.form.get('name')
+        password = request.form.get('password')
+        option = request.form.get('option')
+
+        data = {
+            'name': name,
+            'password': password,
+            'option': option
+        }
+        return render_template('step4a.html', data=data)
+
+    return render_template('step4.html')
 
 
 if __name__ == "__main__":
